@@ -1,7 +1,7 @@
 # Rest-Api-Json
 Una Rest API básica en Laravel, dónde se ejemplifica el uso de rutas GET y POST en el Framework de PHP
 
-NOTA : Este README est[a especialmente hecho para usuarios Windows
+NOTA : Este README está especialmente hecho para usuarios Windows
 
 <h2>Requisitos previos</h2>
 <ol>
