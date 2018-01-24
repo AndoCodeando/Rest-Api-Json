@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,4 +23,31 @@ Route::get('/mi-primer-ruta',function(){
 
 Route::get('/ruta-parametrizada/{usuario}',function($usuario){
 	return response()->json(["mensaje" => "hola " . $usuario]);
+});
+
+Route::get('/login/{usuario}/{p}',function($usuario,$password){
+	if($usuario == "AndoCodeando" && $password == "1.2..3...")
+		return response()->json(["mensaje" => "hola " . $usuario]);
+	else
+		return response()->json(["mensaje" => "login fallido"]);
+	
+});
+
+
+Route::post('/login',function(Request $re){
+
+	$usuario = $re->input("usuario");
+	$password = $re->input("password");
+
+	if($usuario == "AndoCodeando" && $password == "1.2..3...")
+		return response()->json(["mensaje" => "hola " . $usuario]);
+	else
+		return response()->json(["mensaje" => "login fallido"]);
+	
+});
+
+
+
+Route::get('/token',function(){
+	echo csrf_token();	
 });
